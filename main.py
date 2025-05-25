@@ -80,7 +80,6 @@ if __name__ == "__main__":
         {"metabase_card_id": 7702, "worksheet_name": "Referrals(7702)", "spreadsheet_key": "1euT7uC9GILqjFMgoLtzVBbHMwNSwlZXKhA2bbzZs4xs"},
         {"metabase_card_id": 7624, "worksheet_name": "Round-wise details (7624)", "spreadsheet_key": "1euT7uC9GILqjFMgoLtzVBbHMwNSwlZXKhA2bbzZs4xs"},
         # {"metabase_card_id": 7625, "worksheet_name": "Rejection reasons (7625)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
-]
         # Add other update mappings here
     ]
     for update in updates:
