@@ -5,22 +5,10 @@ import gspread
 from gspread_dataframe import set_with_dataframe
 import csv
 from io import StringIO
+import argparse
 import os
 
-# Load the JSON key file for the service account
-SERVICE_ACCOUNT_FILE = 'path/to/your-service-account-key.json'
-
-# Define the scopes for Google Sheets
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-
-# Authenticate and authorize access
-creds = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
-gc = gspread.authorize(creds)
-
-# Securely retrieve your secret key from GitHub Secrets
-sec = os.getenv('ASHRITHA_SECRET_KEY')
-
-def authenticate_and_run():
+def authenticate_and_run(sec):
     res = requests.post('https://metabase-lierhfgoeiwhr.newtonschool.co/api/session',
                         headers={"Content-Type": "application/json"},
                         json={"username": 'ashritha.k@newtonschool.co', "password": sec})
@@ -31,7 +19,7 @@ def authenticate_and_run():
     token = res.json()['id']
     return token
 
-def update_sheet(token, metabase_card_id, spreadsheet_key, worksheet_name):
+def update_sheet(gc, token, metabase_card_id, spreadsheet_key, worksheet_name):
     try:
         res = requests.post(f'https://metabase-lierhfgoeiwhr.newtonschool.co/api/card/{metabase_card_id}/query/csv',
                             headers={'X-Metabase-Session': token})
@@ -75,10 +63,20 @@ def update_sheet(token, metabase_card_id, spreadsheet_key, worksheet_name):
         print(f"Unexpected error for '{worksheet_name}': {e}")
 
 if __name__ == "__main__":
-    token = authenticate_and_run()
+    parser = argparse.ArgumentParser(description='Google Sheets Automation')
+    parser.add_argument('--service-account-file', type=str, required=True)
+    args = parser.parse_args()
+
+    SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
+    creds = Credentials.from_service_account_file(args.service_account_file, scopes=SCOPES)
+    gc = gspread.authorize(creds)
+
+    sec = os.getenv('ASHRITHA_SECRET_KEY')
+    token = authenticate_and_run(sec)
+    
     updates = [
         {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
         # Add other update mappings here
     ]
     for update in updates:
-        update_sheet(token, update['metabase_card_id'], update["spreadsheet_key"], update['worksheet_name'])
+        update_sheet(gc, token, update['metabase_card_id'], update["spreadsheet_key"], update['worksheet_name'])
