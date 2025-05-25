@@ -10,12 +10,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      
+
       - name: Install dependencies
         run: |
           pip install requests
@@ -23,7 +23,12 @@ jobs:
           pip install pandas
           pip install google-auth
 
+      - name: Decode and Save Service Account Key
+        env:
+          SERVICE_ACCOUNT_KEY: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+        run: echo $SERVICE_ACCOUNT_KEY | base64 --decode > service-account-key.json
+
       - name: Run script
         env:
           ASHRITHA_SECRET_KEY: ${{ secrets.ASHRITHA_SECRET_KEY }}
-        run: python main.py
+        run: python main.py --service-account-file service-account-key.json
