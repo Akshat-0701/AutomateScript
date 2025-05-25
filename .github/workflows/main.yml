@@ -1,0 +1,25 @@
+name: Run Script Every 12 Hours
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"  # Every 12 hours
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run script
+        env:
+          ASHRITHA_SECRET_KEY: ${{ secrets.ASHRITHA_SECRET_KEY }}
+        run: python main.py
