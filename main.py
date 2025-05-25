@@ -75,7 +75,7 @@ if __name__ == "__main__":
     token = authenticate_and_run(sec)
     
     updates = [
-        {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
+        {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1euT7uC9GILqjFMgoLtzVBbHMwNSwlZXKhA2bbzZs4xs"},
         # Add other update mappings here
     ]
     for update in updates:
