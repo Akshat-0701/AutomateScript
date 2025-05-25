@@ -2,7 +2,7 @@ name: Run Script Every 12 Hours
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Every 12 hours
+    - cron: "30 0,12 * * *"  # Runs at 12:30 AM and 12:30 PM UTC
   workflow_dispatch:        # Allows manual triggering
 
 jobs:
@@ -24,7 +24,6 @@ jobs:
           pip install pandas
           pip install google-auth
           pip install gspread-dataframe
-
 
       - name: Decode and Save Service Account Key
         env:
