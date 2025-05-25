@@ -23,6 +23,8 @@ jobs:
           pip install gspread
           pip install pandas
           pip install google-auth
+          pip install gspread-dataframe
+
 
       - name: Decode and Save Service Account Key
         env:
