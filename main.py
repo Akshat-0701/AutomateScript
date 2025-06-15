@@ -7,6 +7,7 @@ import csv
 from io import StringIO
 import argparse
 import os
+import time
 
 def authenticate_and_run(sec):
     res = requests.post('https://metabase-lierhfgoeiwhr.newtonschool.co/api/session',
