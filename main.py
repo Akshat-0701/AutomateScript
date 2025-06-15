@@ -88,3 +88,5 @@ if __name__ == "__main__":
               ]
     for update in updates:
         update_sheet(gc, token, update['metabase_card_id'], update["spreadsheet_key"], update['worksheet_name'])
+        time.sleep(2)  # Pause for 2 seconds between each request
+
