@@ -3,7 +3,7 @@ name: Run Script Every 12 Hours
 on:
   schedule:
     - cron: "30 0,12 * * *"  # Runs at 12:30 AM and 12:30 PM UTC
-  workflow_dispatch:        # Allows manual triggering
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -17,13 +17,16 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
-        run: |
-          pip install requests
-          pip install gspread
-          pip install pandas
-          pip install google-auth
-          pip install gspread-dataframe
+        run: pip install -r requirements.txt
 
       - name: Decode and Save Service Account Key
         env:
