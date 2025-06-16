@@ -75,15 +75,15 @@ if __name__ == "__main__":
     token = authenticate_and_run(sec)
     
     updates = [
-            {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
-            {"metabase_card_id": 7583, "worksheet_name": "MCQ", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
-            {"metabase_card_id": 7702, "worksheet_name": "Referrals(7702)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
-            {"metabase_card_id": 7624, "worksheet_name": "Round-wise details (7624)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
-            {"metabase_card_id": 7625, "worksheet_name": "Rejection reasons (7625)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
-            {"metabase_card_id": 7825, "worksheet_name": "Referrals(7825)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
-            {"metabase_card_id": 7823, "worksheet_name": "Round-wise details (7823)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
-            {"metabase_card_id": 7826, "worksheet_name": "Rejection reasons (7826)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
-            {"metabase_card_id": 7844, "worksheet_name": "All candidates", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
+            # {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
+            # {"metabase_card_id": 7583, "worksheet_name": "MCQ", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
+            {"metabase_card_id": 7702, "worksheet_name": "Referrals(7702)", "spreadsheet_key": "1nw3N2qLlMlL2QkApxH30pMy4TsyUl5Eln19lU6_ceNI"},
+            {"metabase_card_id": 7624, "worksheet_name": "Round-wise details (7624)", "spreadsheet_key": "1nw3N2qLlMlL2QkApxH30pMy4TsyUl5Eln19lU6_ceNI"},
+            {"metabase_card_id": 7625, "worksheet_name": "Rejection reasons (7625)", "spreadsheet_key": "1nw3N2qLlMlL2QkApxH30pMy4TsyUl5Eln19lU6_ceNI"},
+            # {"metabase_card_id": 7825, "worksheet_name": "Referrals(7825)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
+            # {"metabase_card_id": 7823, "worksheet_name": "Round-wise details (7823)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
+            # {"metabase_card_id": 7826, "worksheet_name": "Rejection reasons (7826)", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
+            # {"metabase_card_id": 7844, "worksheet_name": "All candidates", "spreadsheet_key": "1r5hP96xuyNsGfmNyzkSC_nEsuRxB7vaiceXqK-bvbxw"},
             # Add other update mappings here
               ]
     for update in updates:
