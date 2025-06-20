@@ -77,6 +77,7 @@ if __name__ == "__main__":
     updates = [
             {"metabase_card_id": 7584, "worksheet_name": "Coding", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
             {"metabase_card_id": 7583, "worksheet_name": "MCQ", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
+            {"metabase_card_id": 7881, "worksheet_name": "Proctor (7881)", "spreadsheet_key": "1dXvhLhUKnWAQaVW_2ncRlvVspKB2tZnxcFqlYitdwT8"},
             {"metabase_card_id": 7702, "worksheet_name": "Referrals(7702)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
             {"metabase_card_id": 7624, "worksheet_name": "Round-wise details (7624)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
             {"metabase_card_id": 7625, "worksheet_name": "Rejection reasons (7625)", "spreadsheet_key": "1w4oiD9rnazdI1Drz0T2kDGHxKQ-hDDSMriB1nPTKdlo"},
